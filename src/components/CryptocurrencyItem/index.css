@@ -40,6 +40,7 @@
 .usd-and-euro-values-container {
   display: flex;
   align-items: center;
+  list-style-type: none;
 }
 
 .currency-value {
@@ -53,6 +54,7 @@
 
 @media (min-width: 576px) {
   .currency-value {
+    text-align: right;
     font-size: 16px;
     width: 72px;
     margin-left: 48px;

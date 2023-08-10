@@ -3,13 +3,13 @@
 import './index.css'
 
 const CryptocurrencyItem = props => {
-  const {cryptocurrenciesDetails} = props
+  const {cryptocurrencyDetails} = props
   const {
     currencyLogoUrl,
     currencyName,
     usdValue,
     euroValue,
-  } = cryptocurrenciesDetails
+  } = cryptocurrencyDetails
 
   return (
     <li className="cryptocurrency-item">

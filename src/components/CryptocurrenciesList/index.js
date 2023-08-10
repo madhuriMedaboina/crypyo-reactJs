@@ -1,50 +1,53 @@
 // Write your JS code here
 
 import {Component} from 'react'
+
 import CryptocurrencyItem from '../CryptocurrencyItem'
 
 import './index.css'
 
 class CryptocurrenciesList extends Component {
-  renderHeader = () => {
-    ;<nav className="list-header">
-      <p className="list-heading">Coin Type</p>
-      <div className="list-type">
-        <li className="usd-heading">USD</li>
-        <li className="usd-heading">EURO</li>
+  renderCryptocurrenciesHeader = () => (
+    <div className="list-header">
+      <p className="list-coin-type-heading">Coin Type</p>
+      <div className="usd-and-euro-values-container">
+        <p className="list-coin-value-heading">USD</p>
+        <p className="list-coin-value-heading">EURO</p>
       </div>
-    </nav>
-  }
+    </div>
+  )
 
-  renderCryptocurrenceisView = () => {
+  renderCryptocurrenciesView = () => {
     const {currencyData} = this.props
+
     return (
-      <div className="crypto-list-container">
-        {this.renderHeader()}
+      <div className="cryptocurrencies-list-container">
+        {this.renderCryptocurrenciesHeader()}
         <ul className="cryptocurrencies-list">
-          {currencyData.map(eachItem => (
+          {currencyData.map(eachCryptocurrency => (
             <CryptocurrencyItem
-              key={eachItem.id}
-              cryptocurrenciesDetails={eachItem}
+              key={eachCryptocurrency.id}
+              cryptocurrencyDetails={eachCryptocurrency}
             />
           ))}
         </ul>
-        {this.renderCryptocurrenceisView()}
       </div>
     )
   }
 
   render() {
     return (
-      <div className="cryptocurrency-container">
+      <div className="cryptocurrencies-container">
         <h1 className="heading">Cryptocurrency Tracker</h1>
         <img
+          className="cryptocurrency-img"
           src="https://assets.ccbp.in/frontend/react-js/cryptocurrency-bg.png"
           alt="cryptocurrency"
-          className="img"
         />
+        {this.renderCryptocurrenciesView()}
       </div>
     )
   }
 }
+
 export default CryptocurrenciesList

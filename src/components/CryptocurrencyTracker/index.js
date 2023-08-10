@@ -37,11 +37,11 @@ class CryptocurrencyTracker extends Component {
     return <CryptocurrenciesList currencyData={currencyData} />
   }
 
-  renderLoading = () => {
-    ;<div data-testid="loader">
+  renderLoading = () => (
+    <div data-testid="loader">
       <Loader type="Rings" color="#ffffff" height={80} width={80} />
     </div>
-  }
+  )
 
   render() {
     const {isLoading} = this.state
